@@ -1,0 +1,16 @@
+{% extends 'application/base.html' %}
+
+{% block content %}
+
+    <div class="container-home">
+        <div class="container mt-5">
+            <h1>Accueil</h1>
+            <p>Bienvenue ! Vous êtes sur la page d'accueil.</p>
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Se déconnecter</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

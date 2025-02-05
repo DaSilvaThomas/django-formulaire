@@ -1,0 +1,24 @@
+body {
+    height: 600px;
+}
+
+/* Page de connexion */
+.container-login {
+    margin: 0 400px 0 400px;
+}
+
+/* Page d'inscription */
+.container-registration {
+    margin: 0 350px 0 350px;
+}
+
+/* Page d'accueil */
+.container-home {
+    margin: 0 225px 0 225px;
+}
+
+/* Logo du site */
+img {
+    width: 150px;
+    height: 150px;
+}
