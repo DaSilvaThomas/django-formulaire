@@ -8,7 +8,48 @@ Ce projet Django, qui s'appelle **django-formulaire**, a pour objectif de créer
 
 Le projet est structuré comme suit :
 
-```plaintext django-formulaire/ │ ├── application/ │ ├── admin.py │ ├── apps.py │ ├── forms.py │ ├── models.py │ ├── tests.py │ ├── validators.py │ ├── views.py │ ├── migrations/ │ ├── static/ │ │ └── application/ │ │ ├── logo_dragon.jpg │ │ └── style.css │ ├── templates/ │ │ └── application/ │ │ ├── base.html │ │ ├── home.html │ │ ├── login.html │ │ └── registration.html │ └── __pycache__/ │ ├── formulaire/ │ ├── asgi.py │ ├── settings.py │ ├── urls.py │ ├── wsgi.py │ └── __pycache__/ │ ├── staticfiles/ │ └── admin/ │ ├── css/ │ ├── img/ │ └── js/ │ ├── .gitignore ├── db.sqlite3 ├── manage.py └── requirements.txt ```
+```plaintext 
+django-formulaire/
+│
+├── application/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── validators.py
+│   ├── views.py
+│   ├── migrations/
+│   ├── static/
+│   │   └── application/
+│   │       ├── logo_dragon.jpg
+│   │       └── style.css
+│   ├── templates/
+│   │   └── application/
+│   │       ├── base.html
+│   │       ├── home.html
+│   │       ├── login.html
+│   │       └── registration.html
+│   └── __pycache__/
+│
+├── formulaire/
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+│   └── __pycache__/
+│
+├── staticfiles/
+│   └── admin/
+│       ├── css/
+│       ├── img/
+│       └── js/
+│
+├── .gitignore
+├── db.sqlite3
+├── manage.py
+└── requirements.txt
+```
 
 
 ## Installation et Configuration
