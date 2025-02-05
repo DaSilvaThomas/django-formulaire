@@ -64,7 +64,7 @@ django-formulaire/
 1. **Cloner le dépôt GitHub** :
 
    ```bash
-   git clone https://github.com/votre-utilisateur/django-formulaire.git
+   git clone https://github.com/DaSilvaThomas/django-formulaire.git
    cd django-formulaire
    ```
 
