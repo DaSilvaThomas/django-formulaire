@@ -64,37 +64,44 @@ django-formulaire/
    ```bash
    git clone https://github.com/votre-utilisateur/django-formulaire.git
    cd django-formulaire
+   ```
 
 2. **Créer un environnement virtuel** :
 
     ```bash
     python -m venv env
+    ```
 
 3. **Activer l'environnement virtuel** :
 
-Sur Windows :
+- Sur Windows :
     ```bash
     env\Scripts\activate
+    ```
 
-Sur macOS/Linux :
+- Sur macOS/Linux :
     ```bash
     source env/bin/activate
+    ```
 
 4. **Installer les dépendances** :
 
     ```bash
     pip install -r requirements.txt
+    ```
 
 5. **Configurer la base de données** :
 
     Le projet utilise SQLite par défaut. Vous pouvez exécuter les migrations pour créer la base de données :
     ```bash
     python manage.py migrate
+    ```
 
 6. **Lancer le serveur de développement** :
 
     ```bash
     python manage.py runserver
+    ```
 
 7. **Accéder à l'application** :
 
