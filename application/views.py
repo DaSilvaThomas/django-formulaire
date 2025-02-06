@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import LoginForm
+from .forms import LoginForm, RegistrationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
@@ -34,13 +34,13 @@ def home_view(request):
 
 def registration_view(request):
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = RegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)  # Connexion automatique après l'inscription
             return redirect('home')  # Redirige vers la page d'accueil après inscription
     else:
-        form = UserCreationForm()
+        form = RegistrationForm()
 
     return render(request, 'application/registration.html', {'form': form})
  
