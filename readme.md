@@ -98,14 +98,21 @@ django-formulaire/
     ```bash
     python manage.py migrate
     ```
+    
+6. **(Optionnel) Créer un compte superutilisateur** :
 
-6. **Lancer le serveur de développement** :
+   Si vous souhaitez accéder à l'interface d'administration Django, vous pouvez créer un compte superutilisateur en ligne de commande :
+   ```bash
+    python manage.py createsuperuser
+    ```
+
+7. **Lancer le serveur de développement** :
 
     ```bash
     python manage.py runserver
     ```
 
-7. **Accéder à l'application** :
+8. **Accéder à l'application** :
 
     Ouvrez votre navigateur et accédez à http://localhost:8000/login/ pour la page de connexion.
 
