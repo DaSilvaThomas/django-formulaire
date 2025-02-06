@@ -103,8 +103,8 @@ django-formulaire/
 
    Si vous souhaitez accéder à l'interface d'administration Django, vous pouvez créer un compte superutilisateur en ligne de commande :
    ```bash
-    python manage.py createsuperuser
-    ```
+   python manage.py createsuperuser
+   ```
 
 7. **Lancer le serveur de développement** :
 
