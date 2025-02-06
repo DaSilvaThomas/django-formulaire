@@ -65,6 +65,8 @@ django-formulaire/
 
    ```bash
    git clone https://github.com/DaSilvaThomas/django-formulaire.git
+   ```
+   ```bash
    cd django-formulaire
    ```
 
