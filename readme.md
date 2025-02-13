@@ -108,7 +108,7 @@ django-formulaire/
 
 - Sur macOS/Linux :
    ```bash
-   mv formulaire/.env.example formulaire/.env
+   mv .env.example .env
    ```
 
 6. **Ouvrez le fichier .env et remplissez les valeurs manquantes** :
