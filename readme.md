@@ -37,7 +37,7 @@ django-formulaire/
 │   ├── settings.py
 │   ├── urls.py
 │   ├── wsgi.py
-│   ├── .env
+│   ├── .env.example
 │   └── __pycache__/
 │
 ├── staticfiles/
@@ -95,27 +95,59 @@ django-formulaire/
     pip install -r requirements.txt
     ```
 
-5. **Configurer la base de données** :
+5. **Renommez le fichier .env.example en .env** :
 
-    Le projet utilise SQLite par défaut. Vous pouvez exécuter les migrations pour créer la base de données :
+   ```bash
+   cd formulaire
+   ```
+
+- Sur Windows :
+   ```bash
+   ren ".env.example" ".env"
+   ```
+
+- Sur macOS/Linux :
+   ```bash
+   mv formulaire/.env.example formulaire/.env
+   ```
+
+6. **Ouvrez le fichier .env et remplissez les valeurs manquantes** :
+
+   **SECRET_KEY** :
+   La clé secrète Django est utilisée pour sécuriser les sessions et les données sensibles. Vous devez générer une clé sécurisée et unique. Exemple de clé :
+   ```plaintext
+   SECRET_KEY='django-insecure-votre_clé_secrète_ici_1234567890!@#$%^&*'
+   ```
+   - Vous pouvez générer une clé sécurisée sur ce site : https://djecrety.ir/
+
+   **ADMIN_URL** :
+   L'URL d'administration est utilisée pour accéder à l'interface d'administration de Django. Pour des raisons de sécurité, il est recommandé de ne pas utiliser l'URL par défaut (admin/). Ajoutez des chiffres ou des caractères aléatoires pour la rendre plus difficile à deviner. Exemple :
+   ```plaintext
+   ADMIN_URL='admin-arc45y6/'
+   ```
+   - Remarque : N'oubliez pas le **/** à la fin de l'URL.
+
+8. **Configurer la base de données** :
+
+    Le projet utilise SQLite par défaut. Vous pouvez exécuter les migrations pour créer la base de données (se placer à la racine du projet) :
     ```bash
     python manage.py migrate
     ```
     
-6. **(Optionnel) Créer un compte superutilisateur** :
+10. **(Optionnel) Créer un compte superutilisateur** :
 
    Si vous souhaitez accéder à l'interface d'administration Django, vous pouvez créer un compte superutilisateur en ligne de commande :
    ```bash
    python manage.py createsuperuser
    ```
 
-7. **Lancer le serveur de développement** :
+11. **Lancer le serveur de développement** :
 
     ```bash
     python manage.py runserver
     ```
 
-8. **Accéder à l'application** :
+12. **Accéder à l'application** :
 
     Ouvrez votre navigateur et accédez à http://localhost:8000/login/ pour la page de connexion.
 
