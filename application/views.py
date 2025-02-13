@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from .forms import LoginForm, RegistrationForm
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
 
 
 def login_view(request):
@@ -29,6 +27,8 @@ def logout_view(request):
 
 @login_required(login_url='login')  # Redirige vers /login si non connecté
 def home_view(request):
+    if not request.user.is_authenticated:
+        return redirect('login')  # Les utilisateurs non connecté sont redirigés vers la page login
     return render(request, 'application/home.html')
 
 

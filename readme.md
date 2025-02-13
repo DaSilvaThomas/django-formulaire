@@ -37,6 +37,7 @@ django-formulaire/
 │   ├── settings.py
 │   ├── urls.py
 │   ├── wsgi.py
+│   ├── .env
 │   └── __pycache__/
 │
 ├── staticfiles/
@@ -160,6 +161,41 @@ django-formulaire/
     Le middleware XFrameOptionsMiddleware est activé pour empêcher les attaques de type "clickjacking" en définissant l'en-tête HTTP X-Frame-Options.
 
 
+## Nouvelles Mesures de Sécurité Ajoutées
+
+1. **OWASP A1** : Injections SQL et attaques XSS
+    
+    Protection contre les injections SQL :
+
+    - Django utilise un ORM (Object-Relational Mapping) qui prévient les injections SQL en échappant automatiquement les entrées utilisateur.
+
+    Protection contre les attaques XSS :
+
+    - Le paramètre SECURE_BROWSER_XSS_FILTER est activé dans settings.py pour activer le filtre XSS côté navigateur. De plus, Django échappe automatiquement les données dans les templates pour prévenir les attaques XSS.
+
+2. **OWASP A3** : Exposition de données sensibles
+
+    Utilisation de django-environ pour la gestion des variables sensibles :
+
+    - Les variables sensibles telles que SECRET_KEY, DEBUG, et ALLOWED_HOSTS sont désormais stockées dans un fichier .env situé dans le dossier formulaire/. Ce fichier est ignoré par Git pour éviter l'exposition accidentelle de ces informations sensibles.
+
+3. **OWASP A5** : Mauvaise gestion des accès
+
+    Validation des noms d'utilisateurs :
+
+    - Le formulaire de connexion et d'inscription utilise une classe SafeCharField pour valider les noms d'utilisateurs. Cette classe empêche l'utilisation de caractères spéciaux non autorisés, réduisant ainsi le risque d'injection de code malveillant.
+
+    Redirection sécurisée après connexion/déconnexion :
+
+    - Les vues de connexion et de déconnexion redirigent les utilisateurs vers des pages sécurisées (home ou login) après chaque action, évitant ainsi les redirections non contrôlées.
+
+4. **OWASP A8** : Falsification de requête côté serveur (SSRF)
+
+    Absence de vulnérabilité SSRF :
+
+    - Le projet ne traite pas d'URLs fournies par l'utilisateur et ne contient aucune fonctionnalité qui envoie des requêtes HTTP vers des URLs externes. Par conséquent, il n'est pas vulnérable aux attaques de type SSRF (Server-Side Request Forgery).
+
+
 ## Fichiers Importants
 
 - settings.py : Contient les configurations du projet, y compris les paramètres de sécurité.
@@ -168,3 +204,4 @@ django-formulaire/
 - validators.py : Contient le validateur personnalisé pour la complexité des mots de passe.
 - templates/ : Contient les templates HTML pour les pages de connexion, d'inscription et d'accueil.
 - static/ : Contient les fichiers static du projet.
+- .env : Fichier de configuration des variables d'environnement, situé dans le dossier formulaire/
