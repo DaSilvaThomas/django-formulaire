@@ -41,10 +41,13 @@ django-formulaire/
 │   └── __pycache__/
 │
 ├── staticfiles/
-│   └── admin/
-│       ├── css/
-│       ├── img/
-│       └── js/
+│   ├── admin/
+│   │   ├── css/
+│   │   ├── img/
+│   │   └── js/
+│   └── application/
+│       ├── logo_dragon.jpg
+│       └── style.css
 │
 ├── .gitignore
 ├── db.sqlite3
